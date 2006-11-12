@@ -8,3 +8,8 @@ Version 1.0.2
 2. Previous version can not be compiled with gcc (Pointed by Belinda Thom and Michel Beaulieu). 
 Now I hope this can be done. 
 
+Version 1.0.3
+
+3. There was a strange garbage string in file p_demo.m (Pointed by Jani Lahtinen).
+This bug is fixed.
+
