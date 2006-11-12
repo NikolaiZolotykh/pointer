@@ -10,7 +10,10 @@ mxArray* RegisterObject(mxArray *strct, const char *obj_name)
 
   mexCallMATLAB(1, Out, 2, In, "class");
 
-  return Out[0];
+//  In[0] = mxCreateString("struct");
+//  mexCallMATLAB(0, NULL, 1, In, "inferiorto");  // inferiorto struct
+  
+return Out[0];
 }
 
 mxArray* CreateObject(int m, int n, int nfields, const char *field_names[], const char *obj_name)

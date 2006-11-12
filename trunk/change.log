@@ -1,15 +1,32 @@
 Version 1.0.1
 
-1. Previous version can not be compiled with lcc (Pointed by Andrew
+1. Previous version can not be compiled with lcc (pointed by Andrew
 Hutchinson). Now this can be done.
 
 Version 1.0.2
 
-2. Previous version can not be compiled with gcc (Pointed by Belinda Thom and Michel Beaulieu). 
-Now I hope this can be done. 
+2. Previous version can not be compiled with gcc (pointed by Belinda Thom
+and Michel Beaulieu). Now I hope this can be done.
 
 Version 1.0.3
 
-3. There was a strange garbage string in file p_demo.m (Pointed by Jani Lahtinen).
-This bug is fixed.
+3. There was a strange garbage string in file p_demo.m (pointed by Jani
+Lahtinen). This bug is fixed.
+
+Version 1.0.4
+
+4. I deleted mxx.m and mexme.m files because using them led to some
+problems. Now installation procedure is longer but clearer (I suppose) (see
+contents.m) (thanks to Joe Groner and Jose Suarez)
+
+5. Some things clarifying joint using pointers library and DSATX is added
+to documentation (contents.m) (thanks to Omar Kofahi and Ralph Peters)
+
+6. I repaired subsref.m and subsasgn.m. Christoph Henninger and Gang Liang
+pointed out some bugs in them. Thanks a lot to Gang Liang for helpfull
+suggestions. Now you can use long expressions uncluding pointers subfields
+such as
+  a = pointer
+  a.data1.data2.data3 = 'abc'
+etc.
 
