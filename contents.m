@@ -1,19 +1,47 @@
 % Pointers Library
 % 
-% The idea of the library is taken from DSTAX (Data Structures and
-% Algorithms) toolbox (MathWorks Inc.). Unfortunately, DSTAX supplies certain
+% The idea of the library is taken from DSATX (Data Structures and
+% Algorithms) toolbox (MathWorks Inc.). Unfortunately, DSATX supplies certain
 % mex-functions as dll-files and does not contain the source C code. The
 % mentioned dll-files are supplied only for early versions of MATLAB (not for
 % MATLAB 7.0). We implement pointer objects that support all possibilities of
-% DSTAX pointers and some other possibilities. Almost all functions are
+% DSATX pointers and some other possibilities. Almost all functions are
 % written in C. Source code is included. On the other hand, DSATX also supplies
 % a lot of m-files that implement some algorithms on data structures 
 % (lists, stacks, queues, binary trees, avl, and red-black trees)
 % whith using DSATX pointers. You can use these m-files jointly with 
 % our implementaions of pointers class.
 % 
-% To compile all required mex-functions execute in MATLAB window
-% MEXME function.
+% To compile all required mex-functions in MATLAB command window change dir to 
+% @pointer and execute the following commands:
+%      mex assgn.c    utils.c
+%      mex eq.c       utils.c
+%      mex free.c     utils.c
+%      mex ne.c       utils.c
+%      mex pointer.c  utils.c
+%      mex ref.c      utils.c
+%      mex struct.c   utils.c
+%      mex copy.c     utils.c
+%
+% If you want to use Pointers Library jontly with DSATX toolbox
+% install DSATX and overwrite those files existing from DSTAX 
+% by Pointers Library files (including @pointer directory).
+% Please check that @pointers directory is in lower-case.
+% 
+% If you have problems with joint installation Pointers Library and DSATXB
+% (for example, using them you get error "??? Both inputs must be pointers or one of 
+% them is pointer and other is scalar 0 (= NULL)") first of all check
+% that @pointers directory is in lower-case. If this does not get the result 
+% try the procedure proposed by Ralph Peters:
+% - remove the DSATX library
+% - install your pointers library
+% - run mexme to recompile the pointers library
+% - rehash toolbox / rehash toolboxcache
+% - restart MATLAB (or restart computer)
+% - try p_demo
+% - copy DSATX toolbox files to the same dir as ...\*.* and ...\%pointer\*.* and don't overwrite files
+% - rehash toolbox / rehash toolboxcache 
+% - try p_demo and bt_demo
 %
 % Pointers Library implements class POINTER. Objects of this class behave
 % as references in C++ or in Java (but not as pointers in C/C++). Pointers
@@ -92,5 +120,5 @@
 %
 %
 
-%   Copyright 2004 Nikolai Yu. Zolotykh
+%   Copyright 2004, 2005 Nikolai Yu. Zolotykh
 %
