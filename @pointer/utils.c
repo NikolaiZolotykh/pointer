@@ -37,7 +37,7 @@ char* AllocAndGetString(const mxArray *A)
 
 mxArray* MakeStructCopyAndCreatePointer(const mxArray *data)
 {
-  char *field_names[] = {"data"};
+  const char *field_names[] = {"data"};
   mxArray *A, *address, *copy_data;
 
   A = CreateObject(1, 1, 1, field_names, "pointer");

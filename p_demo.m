@@ -33,5 +33,6 @@ function p_demo
     free(prev);
   end;
 
+freedfgsf;
 
   

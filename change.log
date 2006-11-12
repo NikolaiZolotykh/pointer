@@ -1,4 +1,10 @@
 Version 1.0.1
 
-1. Previous version can not be compiled with lcc (Pointed by Andrrew Hutchinson). Now this can be done. 
+1. Previous version can not be compiled with lcc (Pointed by Andrew
+Hutchinson). Now this can be done.
+
+Version 1.0.2
+
+2. Previous version can not be compiled with gcc (Pointed by Belinda Thom and Michel Beaulieu). 
+Now I hope this can be done. 
 
