@@ -1,4 +1,4 @@
-% Pointers Library 1.0
+% Pointers Library
 % 
 % The idea of the library is taken from DSTAX (Data Structures and
 % Algorithms) toolbox (MathWorks Inc.). Unfortunately, DSTAX supplies certain
