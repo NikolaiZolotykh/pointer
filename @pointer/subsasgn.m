@@ -35,12 +35,12 @@ else
                 'Specify a field for a pointer object as obj.field_name']);
         end;
         [sub_obj, exst] = ref(obj, field1);
-        if exst ~= 1
+        if exst == 1
+            sub_obj = do_subsasgn(sub_obj, s(2:end), b);
+        else
             % If pointer is NULL or field does not exist we create new field:
             sub_obj = [];
             sub_obj = builtin('subsasgn', sub_obj, s(2:end), b);
-        else
-            sub_obj = do_subsasgn(sub_obj, s(2:end), b);
         end;
         obj = assgn(obj, field1, sub_obj);
     else

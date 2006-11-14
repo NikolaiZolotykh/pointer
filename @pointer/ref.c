@@ -34,7 +34,7 @@ void mexFunction(int nOut, mxArray *pOut[],
     }
     else
     {
-      pOut[0] = mxDuplicateArray(mxGetFieldByNumber(data, 0, field_number));
+      pOut[0] = mxGetFieldByNumber(data, 0, field_number);
       pOut[1] = mxCreateScalarDouble(1);
     }
     mxFree(field_name);

@@ -1,6 +1,6 @@
 function p_demo
 
-% P_DEMO		Demo program for pointers library.
+% P_DEMO		Demo program for pointer library.
 
 %   Copyright 2004 Nikolai Yu. Zolotykh
 
