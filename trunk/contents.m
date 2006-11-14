@@ -1,4 +1,4 @@
-% Pointers Library
+% MATLAB Pointer Library
 % 
 % The idea of the library is taken from DSATX (Data Structures and
 % Algorithms) toolbox (MathWorks Inc.). Unfortunately, DSATX supplies certain
@@ -22,20 +22,23 @@
 %      mex ref.c      utils.c
 %      mex struct.c   utils.c
 %      mex copy.c     utils.c
+% or simply type
+%      mexme
+% instead
 %
-% If you want to use Pointers Library jontly with DSATX toolbox
+% If you want to use Pointer Library jontly with DSATX toolbox
 % install DSATX and overwrite those files existing from DSTAX 
-% by Pointers Library files (including @pointer directory).
+% by Pointer Library files (including @pointer directory).
 % Please check that @pointers directory is in lower-case.
 % 
-% If you have problems with joint installation Pointers Library and DSATXB
+% If you have problems with joint installation Pointer Library and DSATXB
 % (for example, using them you get error "??? Both inputs must be pointers or one of 
 % them is pointer and other is scalar 0 (= NULL)") first of all check
 % that @pointers directory is in lower-case. If this does not get the result 
 % try the procedure proposed by Ralph Peters:
 % - remove the DSATX library
-% - install your pointers library
-% - run mexme to recompile the pointers library
+% - install your Pointer Library
+% - run mexme to recompile the Pointer Library
 % - rehash toolbox / rehash toolboxcache
 % - restart MATLAB (or restart computer)
 % - try p_demo
@@ -43,7 +46,7 @@
 % - rehash toolbox / rehash toolboxcache 
 % - try p_demo and bt_demo
 %
-% Pointers Library implements class POINTER. Objects of this class behave
+% Pointer Library implements class POINTER. Objects of this class behave
 % as references in C++ or in Java (but not as pointers in C/C++). Pointers
 % can be considered as synonyms. Different pointers can point to the same
 % contents. Pointer contents can be considered as MATLAB structure array 1x1.
@@ -116,9 +119,16 @@
 %          @POINTER\COPY, @POINTER\FREE
 %
 % Send suggestions, bug fixes and questions to 
-% Nikolai Yu. Zolotykh (zny@uic.nnov.ru, http://www.uic.nnov.ru/~zny)
-%
-%
+% Nikolai Yu. Zolotykh (see http://www.uic.nnov.ru/~zny)
 
-%   Copyright 2004, 2005 Nikolai Yu. Zolotykh
+%   Copyright (c) 2004, 2005 Nikolai Yu. Zolotykh (University of Nizhni Novgorod, Russia)
 %
+%  This program is free software; you can redistribute it and/or modify it
+%  under the terms of the GNU General Public License as published by the
+%  Free Software Foundation; either version 2, or (at your option) any
+%  later version: http://www.gnu.org/licenses/gpl.txt.
+%
+%  This program is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
