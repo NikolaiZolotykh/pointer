@@ -7,4 +7,6 @@ mex pointer.c  utils.c
 mex ref.c      utils.c
 mex struct.c   utils.c
 mex copy.c     utils.c
+mex subsasgn.c utils.c
+mex subsref.c  utils.c
 cd ..
