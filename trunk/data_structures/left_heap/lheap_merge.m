@@ -73,7 +73,7 @@ if (lht1.rank~=0)&&(lht2.rank~=0)
      if(lht1.right.rank~=0)
       free(lht1.right);
      end;
-     lht1.right=a;
+     lht1.right=copy(a);
      if(lht1.right.left.rank~=0)
        lht1.right.left.parent.data=lht1.right;
      end;

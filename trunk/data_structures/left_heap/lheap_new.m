@@ -18,6 +18,6 @@ if isempty(lt_nil)
  end
 lheap.size=0;
 lheap.current=pointer;
-lheap.current=copy(lt_nil);
+lheap.current.data=copy(lt_nil);
 lheap.tree=pointer;
 lheap.tree=lt_nil;
