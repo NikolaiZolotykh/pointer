@@ -1,6 +1,6 @@
-function name=djs_find(djs,element)
+function name=djsarr_find(djs,element)
 
-%  name=djs_find(djs,element) returns name of subset, in which
+%  name=djsarr_find(djs,element) returns name of subset, in which
 %  element was found; if element wasn't found
 %  function returns error 'There is no such element'.
 

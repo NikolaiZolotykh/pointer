@@ -1,6 +1,6 @@
-function djs=djs_join(djs,x,y)
+function djs=djsarr_join(djs,x,y)
 
-%  djs=djs_join(djs,x,y) unites two subsets x and y
+%  djs=djsarr_join(djs,x,y) unites two subsets x and y
 %  and returns changed set djs.
 
 % Copyright 2005-2006 Svetlana Chernishova

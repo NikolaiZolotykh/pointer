@@ -1,6 +1,6 @@
-function djs_grap3(node,x,y,dx,dy)
+function djsarr_grap3(node,x,y,dx,dy)
 
-%  Helper function for djs_graph.
+% Helper function for djsarr_graph.
 
 % Copyright 2005-2006 Svetlana Chernishova
 
@@ -14,13 +14,13 @@ if node~=bt_nil
     newx=x-dx;
     newy=y-dy;
     plot([x newx],[y newy],'o-');
-    djs_grap3(node.left,newx,newy,dx/2,dy);
+    djsarr_grap3(node.left,newx,newy,dx/2,dy);
   end
 
   if node.right~=bt_nil
     newx=x+dx;
     newy=y-dy;
     plot([x newx],[y newy],'o-');
-    djs_grap3(node.right,newx,newy,dx/2,dy);
+    djsarr_grap3(node.right,newx,newy,dx/2,dy);
   end
 end

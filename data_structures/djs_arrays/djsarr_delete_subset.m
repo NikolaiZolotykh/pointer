@@ -1,6 +1,6 @@
-function djs=djs_delete_subset(djs,name)
+function djs=djsarr_delete_subset(djs,name)
 
-%  djs=djs_delete_subset(djs,name) deletes subset
+%  djs=djsarr_delete_subset(djs,name) deletes subset
 %  with name "name" and returns changed set djs.
 
 % Copyright 2005-2006 Svetlana Chernishova

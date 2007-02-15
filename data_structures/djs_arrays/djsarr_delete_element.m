@@ -1,6 +1,6 @@
-function djs=djs_delete_element(djs,element)
+function djs=djsarr_delete_element(djs,element)
 
-%  djs=djs_delete_element(djs,element) deletes element
+%  djs=djsarr_delete_element(djs,element) deletes element
 %  and returns changed set djs.
 
 % Copyright 2005-2006 Svetlana Chernishova
