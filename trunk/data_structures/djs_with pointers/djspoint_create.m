@@ -1,6 +1,6 @@
-function djs=djs_create(djs, data)
+function djs=djspoint_create(djs, data)
 
-%  djs=djs_create(djs,element) creates subset which contains
+%  djs=djspoint_create(djs,element) creates subset which contains
 %  one element; name of subset is "element".
 
 %  Copyright 2005-2005 Svetlana Chernishova

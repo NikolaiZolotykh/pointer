@@ -1,4 +1,4 @@
-function h=treelabel(xy,d,varargin)
+function h=treelabel_for_djspoint(xy,d,varargin)
 
 head1=d.tree.head.next;
 while head1~=0
