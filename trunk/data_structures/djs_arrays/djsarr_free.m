@@ -1,6 +1,6 @@
-function djs=djs_free(djs)
+function djs=djsarr_free(djs)
 
-%  djs=djs_free(djs)deletes set and frees the memory.
+%  djs=djsarr_free(djs)deletes set and frees the memory.
 
 % Copyright 2005-2006 Svetlana Chernishova
 

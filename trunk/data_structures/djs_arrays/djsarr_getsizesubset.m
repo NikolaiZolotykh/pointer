@@ -1,6 +1,6 @@
-function size=djs_getsizesubset(djs,name)
+function size=djsarr_getsizesubset(djs,name)
 
-%  size=djs_getsizesubset(djs,name) returns size of
+%  size=djsarr_getsizesubset(djs,name) returns size of
 %  subset with name "name".
 
 % Copyright 2005-2006 Svetlana Chernishova

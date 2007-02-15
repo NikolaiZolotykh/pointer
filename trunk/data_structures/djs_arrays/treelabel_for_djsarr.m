@@ -1,4 +1,4 @@
-function h=treelabel(xy,data,varargin)
+function h=treelabel_for_djsarr(xy,data,varargin)
 
   n=length(data);
   n1=length(xy);

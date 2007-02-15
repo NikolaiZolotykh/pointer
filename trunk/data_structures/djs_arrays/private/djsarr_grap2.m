@@ -1,6 +1,6 @@
-function djs_grap2(djs,x,y,dx,dy)
+function djsarr_grap2(djs,x,y,dx,dy)
 
-%  Helper function for djs_graph.
+% Helper function for djsarr_graph.
 
 % Copyright 2005-2006 Svetlana Chernishova
 
@@ -18,7 +18,7 @@ for i=1:size;
         end
         newx=newx+dx;
         newy=y;
-        djs_grap3(set.tree,newx,y,1,1);
+        djsarr_grap3(set.tree,newx,y,1,1);
         set=set_free(set);
      end
 end

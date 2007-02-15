@@ -1,6 +1,6 @@
-function count=djs_getcount(djs)
+function count=djsarr_getcount(djs)
 
-%  count=djs_getcount(djs) returns number of subsets.
+%  count=djsarr_getcount(djs) returns number of subsets.
 
 % Copyright 2005-2006 Svetlana Chernishova
 

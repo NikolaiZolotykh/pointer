@@ -1,6 +1,6 @@
-function size=djs_getsize(djs)
+function size=djsarr_getsize(djs)
 
-%  size=djs_getsize(djs) returns size of set djs.
+%  size=djsarr_getsize(djs) returns size of set djs.
 
 % Copyright 2005-2006 Svetlana Chernishova
 
