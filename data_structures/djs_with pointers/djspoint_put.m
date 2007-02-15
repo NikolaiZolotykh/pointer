@@ -1,6 +1,6 @@
-function djs=djs_put(djs,element,name)
+function djs=djspoint_put(djs,element,name)
 
-% djs=djs_put(djs,element,name) adds element to subset
+% djs=djspoint_put(djs,element,name) adds element to subset
 % with name "name".
 
 %  Copyright 2005-2005 Svetlana Chernishova

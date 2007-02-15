@@ -1,6 +1,6 @@
-function djs_trav(d)
+function djspoint_trav(d)
 
-%  djs_trav(d) displays all elements that set d contains 
+%  djspoint_trav(d) displays all elements that set d contains 
 
 %  Copyright 2005-2005 Svetlana Chernishova
 

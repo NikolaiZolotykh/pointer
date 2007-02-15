@@ -1,12 +1,12 @@
-function djs=djs_join(djs,name1,name2)
+function djs=djspoint_join(djs,name1,name2)
 
-%  djs=djs_join(djs,x,y) unites two subsets x and y
+%  djs=djspoint_join(djs,x,y) unites two subsets x and y
 %  and returns changed set djs.
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
-s1=djs_getsizesubset(djs,name1);
-s2=djs_getsizesubset(djs,name2);
+s1=djspoint_getsizesubset(djs,name1);
+s2=djspoint_getsizesubset(djs,name2);
 
 if s1<=s2
     head=djs.tree.head.next;
@@ -39,8 +39,8 @@ if s1<=s2
     end
     temp=temp1.data;
     temp2.size=temp2.size+temp1.size-1;
-    djs=djs_delete_element(djs,temp);
-    djs=djs_put(djs,temp,name2);
+    djs=djspoint_delete_element(djs,temp);
+    djs=djspoint_put(djs,temp,name2);
 else
     head=djs.tree.head.next;
     i=1;
@@ -72,6 +72,6 @@ else
     end
     temp=temp1.data;
     temp2.size=temp2.size+temp1.size-1;
-    djs=djs_delete_element(djs,temp);
-    djs=djs_put(djs,temp,name1);
+    djs=djspoint_delete_element(djs,temp);
+    djs=djspoint_put(djs,temp,name1);
 end

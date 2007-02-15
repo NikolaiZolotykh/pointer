@@ -1,6 +1,6 @@
-function djs_grap2(djs,x,y,dx,dy)
+function djspoint_grap2(djs,x,y,dx,dy)
 
-%  Helper function for djs_graph.
+%  Helper function for djspoint_graph.
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
@@ -21,7 +21,7 @@ while i~=djs.count+1
      end
     newx=newx+dx;
     newy=y;
-    djs_grap3(set.tree,newx,y,1,1);
+    djspoint_grap3(set.tree,newx,y,1,1);
     set=set_free(set);
     head1=head1.next;
     i=i+1;

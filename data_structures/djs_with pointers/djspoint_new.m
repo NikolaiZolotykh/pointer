@@ -1,6 +1,6 @@
-function djs=djs_new
+function djs=djspoint_new
 
-%  djs=djs_new returns an empty set.
+%  djs=djspoint_new returns an empty set.
 
 % Copyright 2005-2006 Svetlana Chernishova
 
