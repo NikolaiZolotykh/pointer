@@ -8,20 +8,20 @@ if nargout<1
   error('one output argument required.');
 end  
 global lt_nil;
-lc=copy(lheap.current);
-if lc==lheap.tree
+
+if lheap.current==lheap.tree
     lheap=lheap_delminprior(lheap);
-elseif lc~=lt_nil
+elseif lheap.current.data~=lt_nil
     parent=lheap.current.parent;
     llh=pointer;
     llh.tree=lheap.current;
     llh.size=3;
     if parent.left==llh.tree
      llh=lheap_delminprior(llh);
-     parent.left=llh.tree
+     parent.left=llh.tree;
     else
      llh=lheap_delminprior(llh);
-     parent.right=llh.tree
+     parent.right=llh.tree;
     end;
     while parent~=lt_nil
     r1=0;r2=0; 
@@ -51,4 +51,4 @@ elseif lc~=lt_nil
 else
   error('choose current node');  
 end;
-free(lc);
+

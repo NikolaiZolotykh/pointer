@@ -8,8 +8,8 @@ function heap=selforgheap_diffprior(heap,prior)
   error('one output argument required.');
  end  
  global lt_nil;
- if(heap.current.data~=lt_nil)
- lc=heap.current.data;
+ if(heap.current~=lt_nil)
+ lc=heap.current;
  if(lc==heap.tree)
   return;
  else

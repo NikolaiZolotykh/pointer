@@ -7,17 +7,17 @@ function lheap=lheap_decprior(lheap,prior)
  if nargout<1
   error('one output argument required.');
  end  
- if prior>lheap.current.data.prior;
+ if prior>lheap.current.prior;
   error('You can not increase priority');
  end 
  global lt_nil;
  lc=copy(lheap.current);
- lc.data.prior=prior;
- if(lc.data==lheap.tree)
+ lc.prior=prior;
+ if(lc==lheap.tree)
   return;
  else
-  p=lc.data.parent.data;
-  if p.left==lc.data
+  p=lc.parent;
+  if p.left.data==lc.data
     p.left=lt_nil;
   else p.right=lt_nil;
   end;
@@ -42,10 +42,10 @@ function lheap=lheap_decprior(lheap,prior)
    else
      break;
    end;  
-   p=p.parent.data;
+   p=p.parent;
   end;
   lh.size=1;
-  lh.tree=lc.data;
+  lh.tree=lc;
   lheap.size=lheap.size-1;
   [lheap,lh]=lheap_merge(lheap,lh);
  end;

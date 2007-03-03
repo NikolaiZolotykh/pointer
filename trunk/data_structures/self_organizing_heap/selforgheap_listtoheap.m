@@ -1,9 +1,10 @@
 
-%llheap=lazylheap_arrtoheap(array,size) transforms array into lazy left-hand heap
+%heap=selforgheap_arrtoheap(array,size) transforms array into 
+%self-organizing heap
 %  Svetlana Gagarinova  (c) 2005,2006
 
-function llheap=lazylheap_listtoheap(list)
- if nargout<1
+function heap=selforgheap_listtoheap(list)
+if nargout<1
   error('one output argument required.');
 end  
 global lt_nil;
@@ -16,21 +17,17 @@ if isempty(lt_nil)
   lt_nil.left=lt_nil;
   lt_nil.right=lt_nil;
   lt_nil.prior=[];
-end
- size=sl_count(list);
-for i=1:size
+ end
+for i=1:sl_count(list)
  a.size=1;
- n=sl_get(list);
  a.tree=pointer;
+ n=sl_get(list);
  a.tree.data.beg=n.data.beg;
  a.tree.data.fin=n.data.fin;
  a.tree.prior=n.prior;
  list=sl_del(list);
- a.tree.rank=1;
  a.tree.right=lt_nil;
  a.tree.left=lt_nil;
- a.tree.parent=lt_nil;
- a.tree.isexist=1;
  s=sl_insrt(s,a);
 end;
 if(sl_count(s)>1)
@@ -39,16 +36,16 @@ if(sl_count(s)>1)
      s=sl_del(s);
      b=sl_get(s);
      s=sl_del(s);
-     [a,b]=lazylheap_merge(a,b);
+     a=selforgheap_merge(a,b);
      s=sl_appnd(s,a);
     end;    
-    llheap.tree=a.tree;
-    llheap.size=a.size;
+ heap.tree=a.tree;
+ heap.size=a.size;
 elseif(sl_count(s)==1)
     a=sl_get(s);
-    llheap.tree=a.tree;
-    llheap.size=a.size;
+    heap.tree=a.tree;
+    heap.size=a.size;
 else
-    llheap=lazylheap_new;
+ heap=selforgheap_new;
 end;
 s=sl_free(s);

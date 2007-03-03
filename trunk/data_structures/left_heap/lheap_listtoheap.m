@@ -31,9 +31,10 @@ for i=1:size
  a.tree.left=lt_nil;
  a.tree.rank=1;
  a.tree.parent=pointer;
- a.tree.parent.data=lt_nil;
+ a.tree.parent=lt_nil;
  s=sl_insrt(s,a);
 end;
+if(sl_count(s)>1)
 while sl_count(s)>1
  a=sl_get(s);
  s=sl_del(s);
@@ -42,12 +43,17 @@ while sl_count(s)>1
  [a,b]=lheap_merge(a,b);
  s=sl_appnd(s,a);
 end;    
-if(size~=0)
 lheap.tree=a.tree;
-lheap.size=a.size;
+lheap.size=size;
 lheap.current=pointer;
-lheap.current.data=copy(lt_nil);
-s=sl_free(s);
+lheap.current=copy(lt_nil);
+elseif(sl_count(s)==1)
+    a=sl_get(s);
+    lheap.tree=a.tree;
+    lheap.size=size;
+    lheap.current=pointer;
+    lheap.current=copy(lt_nil);
 else
  lheap=lheap_new;
 end; 
+s=sl_free(s);

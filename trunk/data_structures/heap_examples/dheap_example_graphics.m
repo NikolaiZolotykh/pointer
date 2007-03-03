@@ -3,6 +3,7 @@
 %it illustrates basic functions for  d-heaps  
 %  Svetlana Gagarinova  (c) 2005,2006
 
+function dheap_example_graphics()
 ar=[1 2 3 4 5 6 7 8 9 10];
 n=10;
 d=2;
