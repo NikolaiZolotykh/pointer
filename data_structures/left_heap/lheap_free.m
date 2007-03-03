@@ -7,8 +7,8 @@ global lt_nil;
 lheap.tree=lt_free1(lheap.tree);
 lheap.tree=copy(lt_nil); 
 free(lheap.tree);
-lheap.current.data=copy(lt_nil);  
-free(lheap.current.data);
+lheap.current=copy(lt_nil);  
+free(lheap.current);
 lheap.size=-1;
 
 function lt=lt_free1(lt)

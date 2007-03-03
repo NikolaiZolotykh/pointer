@@ -3,6 +3,7 @@
 %it illustrates basic functions for  self-organizing heaps  
 %  Svetlana Gagarinova  (c) 2005,2006
 
+function selforgheap_example_graphics()
 ar=[1 2 3 4 5 6 7 8];
 n=8;
 d=2;

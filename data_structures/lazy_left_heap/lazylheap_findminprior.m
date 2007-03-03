@@ -22,7 +22,6 @@ function [node,llheap]=lazylheap_findminprior(llheap)
  llheap.size=llheap.size-k;
  a=sl_get(listnodes);
  llheap.tree=a.tree;
- llheap.size=a.size;
  llheap.current=llheap.tree;
  node.data=llheap.tree.data;
  node.prior=llheap.tree.prior;

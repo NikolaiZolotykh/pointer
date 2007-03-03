@@ -18,10 +18,10 @@ function lheap=lheap_delminprior(lheap)
  end;    
  lhl.tree=lheap.tree.left;
  lhl.tree.parent=pointer;
- lhl.tree.parent.data=lt_nil;
+ lhl.tree.parent=lt_nil;
  lhr.tree=lheap.tree.right;
  lhr.tree.parent=pointer;
- lhr.tree.parent.data=lt_nil;
+ lhr.tree.parent=lt_nil;
  lhl=lheap_merge(lhl,lhr);
  if(lheap.tree.rank~=0)
   free(lheap.tree);
@@ -35,5 +35,5 @@ function lheap=lheap_delminprior(lheap)
  if(lhl.tree.rank~=0)
   free(lhl.tree)
  end; 
- lheap.current.data=lheap.tree;
+ lheap.current=lheap.tree;
  lheap.size=lheap.size-1; 

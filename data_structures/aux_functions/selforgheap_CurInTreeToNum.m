@@ -9,7 +9,7 @@ i=2;
 j=1;
 b=bt.tree;
 num=0;
-if(b.data~=bt.current.data.data)
+if(b.data~=bt.current.data)
  fl=1;
 else
  fl=0;
@@ -17,7 +17,7 @@ else
 end; 
 while(fl==1)
  if(b.left~=lt_nil)
-  if(b.left.data~=bt.current.data.data) 
+  if(b.left.data~=bt.current.data) 
    i=i+1;
    q=qu_enqu(q,b.left);
   else
@@ -26,7 +26,7 @@ while(fl==1)
   end; 
  end;
  if(b.right~=lt_nil)
-  if(b.right.data~=bt.current.data.data) 
+  if(b.right.data~=bt.current.data) 
    i=i+1;
    q=qu_enqu(q,b.right);
   else
