@@ -15,7 +15,7 @@ for i=1:s(1)
         c=c+1;
     end;
 end;
-if(c==2)b=1;
+if(c==2) b=1;
 else b=0; end;    
 
 function [m,num]=DFS(matr,m,x,c,num,s)

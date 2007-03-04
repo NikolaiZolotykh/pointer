@@ -1,11 +1,11 @@
 
-% Skeleton=RoundRobbin(ListVert)return edge cover of graph; 
+% Skeleton=RoundRobbinS(ListVert)return edge cover of graph; 
 % Skeleton - list of edges, ListVert - list of vertexes(it is numbers from 
 % 1 to n) 
-% here left heaps are used
+% here self-organizing heaps are used
 %  Svetlana Gagarinova  (c) 2005,2006
 
-function Skeleton=RoundRobbin(ListVert)
+function Skeleton=RoundRobbinS(ListVert) %нельзя делать ребра ориентированными
  tic
  Skeleton=sl_new;
  Q=dl_new;
@@ -16,7 +16,7 @@ function Skeleton=RoundRobbin(ListVert)
      ListVert=sl_del(ListVert);
      Part=djs_create(Part,v.data);
      newv.vert=v.data;
-     newv.tree=lheap_listtoheap(v.list);
+     newv.tree=selforgheap_listtoheap(v.list);
      Q=dl_puta(Q,Q.head,newv); 
      a=pointer;
      a.data=Q.head.next;
@@ -25,9 +25,9 @@ function Skeleton=RoundRobbin(ListVert)
  while(sl_count(Q)>=2)
     cur=dl_get(Q);
     Q=dl_delfirst(Q);
-    if (~lheap_empty(cur.tree))
-    stre=lheap_findminprior(cur.tree);
-    cur.tree=lheap_delminprior(cur.tree);
+    if (~selforgheap_empty(cur.tree))
+    stre=selforgheap_findminprior(cur.tree);
+    cur.tree=selforgheap_delminprior(cur.tree);
     Q=dl_puta(Q,Q.head,cur);
     Harar(cur.vert).data.data=Q.head.next;
     e.beg=stre.data.beg;
@@ -50,11 +50,11 @@ function Skeleton=RoundRobbin(ListVert)
     end;
     newv.vert=z;
     if(v1.data~=w1.data)
-      [node1.data.tree,node2.data.tree]=lheap_merge(node1.data.tree,node2.data.tree);
+      [node1.data.tree,node2.data.tree]=selforgheap_merge(node1.data.tree,node2.data.tree);
       newv.tree=node1.data.tree;
     else
      Skeleton=sl_del(Skeleton);
-      newv.tree=node2.data.tree;
+      newv.tree=node2.data.tree;  
     end;
     Q=dl_del(Q,node1);
     Harar(v1.data).data.data=0;
@@ -75,7 +75,7 @@ function Skeleton=RoundRobbin(ListVert)
     end; 
 end;
 toc
-dl_trav(Q,'deltrees');
+dl_trav(Q,'deltreesS');
 Q=dl_free(Q);
 
 
