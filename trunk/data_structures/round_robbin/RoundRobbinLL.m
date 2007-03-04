@@ -1,11 +1,11 @@
 
-% Skeleton=RoundRobbin(ListVert)return edge cover of graph; 
+% Skeleton=RoundRobbinLL(ListVert)return edge cover of graph; 
 % Skeleton - list of edges, ListVert - list of vertexes(it is numbers from 
 % 1 to n) 
-% here left heaps are used
+% here lazy lefthand heaps are used
 %  Svetlana Gagarinova  (c) 2005,2006
 
-function Skeleton=RoundRobbin(ListVert)
+function Skeleton=RoundRobbinLL(ListVert)
  tic
  Skeleton=sl_new;
  Q=dl_new;
@@ -16,7 +16,7 @@ function Skeleton=RoundRobbin(ListVert)
      ListVert=sl_del(ListVert);
      Part=djs_create(Part,v.data);
      newv.vert=v.data;
-     newv.tree=lheap_listtoheap(v.list);
+     newv.tree=lazylheap_listtoheap(v.list);
      Q=dl_puta(Q,Q.head,newv); 
      a=pointer;
      a.data=Q.head.next;
@@ -25,9 +25,9 @@ function Skeleton=RoundRobbin(ListVert)
  while(sl_count(Q)>=2)
     cur=dl_get(Q);
     Q=dl_delfirst(Q);
-    if (~lheap_empty(cur.tree))
-    stre=lheap_findminprior(cur.tree);
-    cur.tree=lheap_delminprior(cur.tree);
+    if (~lazylheap_empty(cur.tree))
+    [stre,cur.tree]=lazylheap_findminprior(cur.tree);
+    cur.tree=lazylheap_delminprior(cur.tree);
     Q=dl_puta(Q,Q.head,cur);
     Harar(cur.vert).data.data=Q.head.next;
     e.beg=stre.data.beg;
@@ -50,7 +50,7 @@ function Skeleton=RoundRobbin(ListVert)
     end;
     newv.vert=z;
     if(v1.data~=w1.data)
-      [node1.data.tree,node2.data.tree]=lheap_merge(node1.data.tree,node2.data.tree);
+      [node1.data.tree,node2.data.tree]=lazylheap_merge(node1.data.tree,node2.data.tree);
       newv.tree=node1.data.tree;
     else
      Skeleton=sl_del(Skeleton);
@@ -75,7 +75,7 @@ function Skeleton=RoundRobbin(ListVert)
     end; 
 end;
 toc
-dl_trav(Q,'deltrees');
+dl_trav(Q,'deltreesLL');
 Q=dl_free(Q);
 
 

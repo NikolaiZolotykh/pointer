@@ -25,10 +25,11 @@ a(5,5)=0;a(5,6)=6;
 a(6,1)=0;a(6,2)=0;
 a(6,3)=4;a(6,4)=2;
 a(6,5)=6;a(6,6)=0;
+
 xy=rand(6,2);
 if(iscoherent(a))
 b=matrix_to_list(a);
-s=RoundRobbin(b);
+s=RoundRobbinS(b);
 c=list_to_matrix(s,6);
 clf
 axis('auto');
