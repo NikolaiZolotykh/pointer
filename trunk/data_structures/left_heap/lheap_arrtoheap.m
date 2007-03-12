@@ -25,7 +25,9 @@ for i=1:size
  a.tree.right=lt_nil;
  a.tree.left=lt_nil;
  a.tree.rank=1;
+ a.tree.parent=pointer;
  a.tree.parent=lt_nil;
+ a.current=a.tree;
  s=sl_insrt(s,a);
 end;
 while sl_count(s)>1
@@ -36,10 +38,8 @@ while sl_count(s)>1
  a=lheap_merge(a,b);
  s=sl_appnd(s,a);
 end; 
-
 lheap.tree=pointer;
 lheap.tree=a.tree;
 lheap.size=a.size;
-lheap.current=pointer;
-lheap.current=copy(lt_nil);
+lheap.current=lt_nil;
 s=sl_free(s);

@@ -17,21 +17,21 @@ function llheap=lazylheap_delminprior(llheap)
  while sl_count(listnodes)>1
   a=sl_get(listnodes);
   if(a.tree.prior==minprior)&&(isdel==0)
-      if (a.tree.left~=lt_nil)&&(a.tree.right~=lt_nil)
+      if (isempty(a.tree.left.data)~=1)&&(isempty(a.tree.right.data)~=1)
        b.tree=a.tree.left;
        b.size=1;
        c.tree=a.tree.right;
        c.size=1;
        listnodes=sl_del(listnodes);
        free(a.tree);
-      elseif a.tree.left~=lt_nil
+      elseif isempty(a.tree.left.data)~=1
         b.tree=a.tree.left;
         b.size=1; 
         listnodes=sl_del(listnodes);
         free(a.tree);
         c=sl_get(listnodes);
         listnodes=sl_del(listnodes);
-      elseif a.tree.right~=lt_nil
+      elseif isempty(a.tree.right.data)~=1
         b.tree=a.tree.right;
         b.size=1; 
         listnodes=sl_del(listnodes);
@@ -69,11 +69,11 @@ function llheap=lazylheap_delminprior(llheap)
  
 function [listnodes,k,minprior]=go_empty_nodes(tree,k,minprior,listnodes)
  global lt_nil; 
- if(tree~=lt_nil)&&(tree.isexist==0)
+ if(isempty(tree.data)~=1)&&(tree.isexist==0)
      k=k+1;
      [listnodes,k,minprior]=go_empty_nodes(tree.left,k,minprior,listnodes);
      [listnodes,k,minprior]=go_empty_nodes(tree.right,k,minprior,listnodes);
- elseif tree~=lt_nil
+ elseif isempty(tree.data)~=1
      if tree.prior<minprior
          minprior=tree.prior;
      end;    
