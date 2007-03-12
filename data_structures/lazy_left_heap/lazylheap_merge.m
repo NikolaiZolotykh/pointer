@@ -24,18 +24,30 @@ function [llh1,llh2]=lazylheap_merge(llh1,llh2)
      end;   
      if llh1.tree.rank>=llh2.tree.rank
         parent.tree.left=copy(llh1.tree);
-        parent.tree.right=llh2.tree;
+        parent.tree.right=copy(llh2.tree);
         if(llh1.tree.right.rank~=0)
          llh1.tree.right.parent=parent.tree.left;
         end;
         if(llh1.tree.left.rank~=0)
          llh1.tree.left.parent=parent.tree.left;  
         end;  
-        llh1.tree.parent=parent.tree;
-        llh2.tree.parent=parent.tree;
+        if(llh2.tree.right.rank~=0)
+         llh2.tree.right.parent=parent.tree.right;
+        end;
+        if(llh2.tree.left.rank~=0)
+         llh2.tree.left.parent=parent.tree.right;  
+        end;  
+        parent.tree.left.parent=parent.tree;
+        parent.tree.right.parent=parent.tree;
      else
-        parent.tree.left=llh2.tree;
+        parent.tree.left=copy(llh2.tree);
         parent.tree.right=copy(llh1.tree);
+        if(llh2.tree.right.rank~=0)
+         llh2.tree.right.parent=parent.tree.left;
+        end;
+        if(llh2.tree.left.rank~=0)
+         llh2.tree.left.parent=parent.tree.left;  
+        end;  
         if(llh1.tree.right.rank~=0)
          llh1.tree.right.parent=parent.tree.right;
         end;
@@ -47,6 +59,7 @@ function [llh1,llh2]=lazylheap_merge(llh1,llh2)
      end;  
      llh1=parent;
      llh2.size=0;
+     llh2.tree=lt_nil;
  elseif(llh1.size==0)
      llh1.size=llh2.size;
      llh1.tree=copy(llh2.tree);

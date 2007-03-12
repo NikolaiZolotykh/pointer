@@ -15,7 +15,10 @@ function [lh1,lh2]=selforgheap_merge(lh1,lh2)
  elseif(lh1.size==0)
    lh1.size=lh2.size;
    lh1.tree=copy(lh2.tree);
-   lh2.tree=lt_nil;
+   if(isempty(lh2.tree.data)~=1)
+       free(lh2.tree);
+       lh2.tree=lt_nil;
+   end;
    lh2.size=0;
  end;
  
@@ -25,6 +28,9 @@ if (lht1~=lt_nil)&&(lht2~=lt_nil)
   if lht1.prior>lht2.prior
     a=copy(lht1);
     lht1=copy(lht2);
+    if(isempty(lht2.data)~=1)
+        free(lht2);
+    end;    
     lht2=a;
   end;
   [lht1.right,lht2]=lheap_merge1(lht1.right,lht2);
@@ -41,5 +47,9 @@ if (lht1~=lt_nil)&&(lht2~=lt_nil)
   end;    
  elseif lht1==lt_nil
      lht1=copy(lht2);
+     if(isempty(lht2.data)~=1)
+         free(lht2);
+         lht2=lt_nil;
+     end;
  end; 
   

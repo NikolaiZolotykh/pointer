@@ -1,5 +1,5 @@
 
-%node=lheap_findminprior(dheap) returns element with minimal priority as a
+%node=âheap_findminprior(dheap) returns element with minimal priority as a
 %struct
 %  Svetlana Gagarinova  (c) 2005,2006
 

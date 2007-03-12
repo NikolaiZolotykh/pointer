@@ -33,12 +33,11 @@ function [node,llheap]=lazylheap_findminprior(llheap)
   
  
 function [listnodes,k]=go_empty_nodes(tree,k,listnodes)
- global lt_nil; 
- if(tree~=lt_nil)&&(tree.isexist==0)
+  if(isempty(tree.data)~=1)&&(tree.isexist==0)
      k=k+1;
      [listnodes,k]=go_empty_nodes(tree.left,k,listnodes);
      [listnodes,k]=go_empty_nodes(tree.right,k,listnodes);
- elseif tree~=lt_nil
+ elseif isempty(tree.data)~=1
      tmpheap.size=1;
      tmpheap.tree=tree;
      listnodes=sl_insrt(listnodes,tmpheap);
