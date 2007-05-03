@@ -6,8 +6,7 @@ function name=djspoint_find(djs,element)
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
-temp=djs.tree;
-head=temp.head.next;
+head=djs.tops.head.next;
 while head~=0
     node=head.data;
     if node.data==element

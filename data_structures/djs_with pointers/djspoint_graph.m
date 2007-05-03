@@ -4,10 +4,11 @@ function djspoint_graph(djs)
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
+count=djspoint_getcount(djs);
 clf
 axis('auto');
 hold('on');
-djspoint_grap2(djs,0,0,16/(djs.count),1);
+djspoint_grap2(djs,0,0,16/count,1);
 hold('off');
 axis('off');
 figure(gcf);

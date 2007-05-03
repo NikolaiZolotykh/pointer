@@ -1,14 +1,11 @@
 function djs=djspoint_create(djs, data)
 
-%  djs=djspoint_create(djs,element) creates subset which contains
-%  one element; name of subset is "element".
+%  djs=djspoint_create(djs,element) creates empty subset with 
+%  name "data".
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
 top=pointer;
 top.data=data;
-top.parent=data;
-top.size=1;
 
-djs.tree=dl_puta(djs.tree,djs.tree.head,top);
-djs.count=djs.count+1;
+djs.names=dl_puta(djs.names,djs.names.tail,top);
