@@ -4,5 +4,5 @@ function djs=djspoint_new
 
 % Copyright 2005-2006 Svetlana Chernishova
 
-djs.tree=dl_new;
-djs.count=0;
+djs.tops=dl_new;
+djs.names=dl_new;

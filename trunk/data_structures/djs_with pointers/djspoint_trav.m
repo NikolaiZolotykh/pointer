@@ -4,9 +4,10 @@ function djspoint_trav(d)
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
-head1=d.tree.head.next;
+head1=djs.tops.head.next;
 while head1~=0
     node=head1.data;
+    disp(node.parent);
     disp(node.data);
     head1=head1.next;
 end

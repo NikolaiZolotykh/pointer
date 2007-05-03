@@ -7,13 +7,13 @@ x=0;y=1;dx=0.05;
 text(x,y,'We have set:');
 
 d=djspoint_new;
-d=djspoint_create(d,1);
-d=djspoint_create(d,4);
-d=djspoint_put(d,2,1);
-d=djspoint_put(d,3,1);
-d=djspoint_put(d,5,1);
-d=djspoint_put(d,8,1);
-d=djspoint_put(d,9,4);
+d=djspoint_create(d,'a');
+d=djspoint_create(d,'b');
+d=djspoint_put(d,2,'a');
+d=djspoint_put(d,3,'a');
+d=djspoint_put(d,5,'a');
+d=djspoint_put(d,8,'a');
+d=djspoint_put(d,9,'b');
 
 hold on;
 axis off;
@@ -32,23 +32,22 @@ for i=1:7
   xy(i,1)=x(i);
   xy(i,2)=y(i);
 end;  
-treelabel_for_djspoint(xy,d);
+treelabel_for_djspoint(xy,d,a);
 pause(pn); 
-
 
 % create element
 text(0,0.9,'We can create new subset using function djs=djspoint\_create(djs,elem)');
 text(0,0.85,'djs - our set, elem - element which define name of subset');
-text(0,0.8,'in this example elem=6');
+text(0,0.8,'in this example elem=c');
 pause;
 clf;
 hold on;
 axis off;
 text(0,0.9,'We can create new subset using function djs=djspoint\_create(djs,elem)');
 text(0,0.85,'djs - our set, elem - element which define name of subset');
-text(0,0.8,'in this example elem=6');
+text(0,0.8,'in this example elem=c');
 text(0,0.75,'RESULT:');
-d=djspoint_create(d,6);
+d=djspoint_create(d,'c');
 b=zeros(1,8);
 for i=1:5
     b(1,i)=a(1,i);
@@ -63,41 +62,41 @@ for i=1:8
   xy(i,1)=x(i);
   xy(i,2)=y(i);
 end;  
-treelabel_for_djspoint(xy,d);
+treelabel_for_djspoint(xy,d,b);
 pause; 
 
 % insert element
 text(0,0.9,'We can create new subset using function djs=djspoint\_create(djs,elem)','Color',[0.8 0.8 0.8]);
 text(0,0.85,'djs - our set, elem - element which define name of subset','Color',[0.8 0.8 0.8]);
 text(0,0.75,'RESULT:','Color',[0.8 0.8 0.8]);
-text(0,0.8,'in this example elem=6','Color',[0.8 0.8 0.8]);
+text(0,0.8,'in this example elem=c','Color',[0.8 0.8 0.8]);
 text(0,0.9,'We can add element using function djs=djspoint\_put(djs,elem,name)');
 text(0,0.85,'djs - our set, elem - element, name - name of subset where element is contain');
-text(0,0.8,'in this example elem=10, name=6');
+text(0,0.8,'in this example elem=10, name=c');
 pause;
 clf;
 hold on;
 axis off;
 text(0,0.9,'We can add element using function djs=djspoint\_put(djs,elem,name)');
 text(0,0.85,'djs - our set, elem - element, name - name of subset where element is contain');
-text(0,0.8,'in this example elem=10, name=6');
+text(0,0.8,'in this example elem=10, name=c');
 text(0,0.75,'RESULT:');
 b(1,9)=6;
 treeplot(b);
-d=djspoint_put(d,10,6);
+d=djspoint_put(d,10,'c');
 [x,y]=treelayout(b);
 for i=1:9
   xy(i,1)=x(i);
   xy(i,2)=y(i);
 end;  
-treelabel_for_djspoint(xy,d);
+treelabel_for_djspoint(xy,d,b);
 pause; 
 
 % get number of subsets
 text(0,0.9,'We can add element using function djs=djspoint\_put(djs,elem,name)','Color',[0.8 0.8 0.8]);
 text(0,0.85,'djs - our set, elem - element, name - name of subset where element is contain','Color',[0.8 0.8 0.8]);
 text(0,0.75,'RESULT:','Color',[0.8 0.8 0.8]);
-text(0,0.8,'in this example elem=10, name=6','Color',[0.8 0.8 0.8]);
+text(0,0.8,'in this example elem=10, name=c','Color',[0.8 0.8 0.8]);
 text(0,0.9,'We can get number of subsets using function count=djspoint\_getcount(djs)');
 text(0,0.85,'djs - our set');
 pause;
@@ -115,7 +114,7 @@ text(0,0.9,'We can get size of subset using function size=djspoint\_getsizesubse
 text(0,0.85,'djs - our set, ss - name of subset');
 text(0,0.8,'in this example ss=1');
 pause;
-size=djspoint_getsizesubset(d,1);
+size=djspoint_getsizesubset(d,'a');
 text(0.21,0,'RESULT: size =');
 text(0.5,0,num2str(size));
 pause;
@@ -151,7 +150,7 @@ for i=1:8
   xy(i,1)=x(i);
   xy(i,2)=y(i);
 end;  
-treelabel_for_djspoint(xy,d);
+treelabel_for_djspoint(xy,d,c);
 pause;
 
 % find element
@@ -178,23 +177,23 @@ text(0.21,0,'RESULT: name =','Color',[0.8 0.8 0.8]);
 text(0.5,0,num2str(n),'Color',[0.8 0.8 0.8]);
 text(0,0.9,'We can unite two subsets using function djs=djspoint\_join(djs,name1,name2)');
 text(0,0.85,'djs - our set, name1 - name of first subset, name - name of second subset');
-text(0,0.8,'in this example name1=4, name2=1');
+text(0,0.8,'in this example name1=a, name2=b');
 pause;
 clf;
 hold on;
 axis off;
 text(0,0.9,'We can unite two subsets using function djs=djspoint\_join(djs,name1,name2)');
 text(0,0.85,'djs - our set, name1 - name of first subset, name - name of second subset');
-text(0,0.8,'in this example name1=4, name2=1');
+text(0,0.8,'in this example name1=a, name2=b');
 text(0,0.75,'RESULT:');
 c(1,4)=1;
-c(1,7)=1;
+c(:,7)=[];
 treeplot(c);
-d=djspoint_join(d,4,1);
+d=djspoint_join(d,'a','b');
 [x,y]=treelayout(c);
-for i=1:8
+for i=1:7
   xy(i,1)=x(i);
   xy(i,2)=y(i);
 end;  
-treelabel_for_djspoint(xy,d);
+treelabel_for_djspoint(xy,d,c);
 d=djspoint_free(d);

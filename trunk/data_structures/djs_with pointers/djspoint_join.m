@@ -5,73 +5,19 @@ function djs=djspoint_join(djs,name1,name2)
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
-s1=djspoint_getsizesubset(djs,name1);
-s2=djspoint_getsizesubset(djs,name2);
-
-if s1<=s2
-    head=djs.tree.head.next;
-    i=1;
-    k=1;
-    while (head~=0)||(k<=s1)
-        node=head.data;
-        if node.parent==name1
-            if i<=djs.count
-                k=k+1;
-            else
-                node.parent=name2;
-                k=k+1;
-            end
-        end
-        head=head.next;
-        i=i+1;
-    end
-    head1=djs.tree.head.next;
-    n=1;
-    while n<=djs.count
-        node=head1.data;
-        if node.parent==name1
-            temp1=node;
-        elseif node.parent==name2
-            temp2=node;
-        end    
-        head1=head1.next;
-        n=n+1;
-    end
-    temp=temp1.data;
-    temp2.size=temp2.size+temp1.size-1;
-    djs=djspoint_delete_element(djs,temp);
-    djs=djspoint_put(djs,temp,name2);
-else
-    head=djs.tree.head.next;
-    i=1;
-    k=1;
-    while (head~=0)||(k<=s2)
-        node=head.data;
-        if node.parent==name2
-            if i<=djs.count
-                k=k+1;
-            else
-                node.parent=name1;
-                k=k+1;
-            end
-        end
-        head=head.next;
-        i=i+1;
-    end
-    head1=djs.tree.head.next;
-    n=1;
-    while n<=djs.count
-        node=head1.data;
-        if node.parent==name2
-            temp1=node;
-        elseif node.parent==name1
-            temp2=node;
-        end    
-        head1=head1.next;
-        n=n+1;
-    end
-    temp=temp1.data;
-    temp2.size=temp2.size+temp1.size-1;
-    djs=djspoint_delete_element(djs,temp);
-    djs=djspoint_put(djs,temp,name1);
+head=djs.tops.head.next;
+while head~=0
+   node=head.data;
+   if (node.parent==name2)
+      node.parent=name1;
+   end
+   head=head.next;
 end
+head=djs.names.head.next;
+node=head.data;
+while (node.data~=name2)
+   head=head.next;
+   node=head.data;
+   node.data
+end
+djs.names=dl_del(djs.names,head);

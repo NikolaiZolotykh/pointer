@@ -11,6 +11,7 @@ if nargout<1
   error('one output argument required.');
 end
 
-djs.tree=dl_free(djs.tree);
-djs.tree=0;
-djs.count=-1;
+djs.tops=dl_free(djs.tops);
+djs.tops=0;
+djs.names=dl_free(djs.names);
+djs.names=0;

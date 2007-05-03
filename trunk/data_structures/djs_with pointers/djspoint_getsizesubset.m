@@ -5,12 +5,12 @@ function size=djspoint_getsizesubset(djs,name)
 
 %  Copyright 2005-2005 Svetlana Chernishova
 
-head=djs.tree.head.next;
+head=djs.tops.head.next;
+size=0;
 while head~=0
     node=head.data;
     if node.parent==name
-        size=node.size;
-        return
+        size=size+1;
     end
     head=head.next;
 end
