@@ -18,6 +18,5 @@ node=head.data;
 while (node.data~=name2)
    head=head.next;
    node=head.data;
-   node.data
 end
 djs.names=dl_del(djs.names,head);
