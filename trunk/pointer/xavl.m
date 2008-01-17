@@ -1,0 +1,28 @@
+Months = {
+    'Jan', 'February', 'March', 'April', ...
+    'May', 'June', 'July', 'August', ...
+    'September', 'October', 'November', 'December'};
+
+a = avl;
+ 
+for i = 1:12
+    insert(a, Months{i}, i);
+end
+ 
+draw(a);
+
+node = findkey(a, 1); % Доступ к данным по ключу
+modify(a, node, 'January'); 
+ 
+disp('Обход в прямом порядке:')
+inorder(a, 'disp');
+ 
+disp('Обход в обратном порядке:')
+postorder(a, 'disp');
+ 
+disp('Обход в концевом порядке:')
+preorder(a, 'disp');
+ 
+draw(a); % См. рис. \ref{xavl}
+%free(a);
+
