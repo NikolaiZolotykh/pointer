@@ -13,11 +13,11 @@ function pointers(varargin)
 
   for k = 1:n
     if ~isvarname(varargin{k})
-      error('pointers:','Not a valid variable name')
+      error('pointers:', 'Not a valid variable name')
     end
   end
 
   for k = 1:n
-    evalin('caller', [varargin{k} ' = pointer']);
+    evalin('caller', [varargin{k} ' = pointer;']);
   end
 

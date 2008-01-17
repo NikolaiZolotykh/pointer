@@ -107,7 +107,7 @@ void mexFunction(int nOut, mxArray *pOut[],
       mexErrMsgTxt("subsasgn: unsupported type operator.");
     
     pointer = nextObj; 
-    dataPtr = GetPointerData(pointer);
+    dataPtr = GetPointerData(GetPointerData(pointer));
   }
 
   /* create pNewIn for dispatching calls: builtin
