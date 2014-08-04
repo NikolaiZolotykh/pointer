@@ -1,0 +1,19 @@
+function djs=djs_free(djs)
+
+if nargin<1
+  error('one input argument required.');
+end
+if nargout<1
+  error('one output argument required.');
+end
+
+head=djs.tree.head;
+while head~=0
+  headnext=head.next;
+  free(head);
+  head=headnext;
+end
+sl.head=0;
+sl.tail=0;
+djs.tree=dl_free(djs.tree);
+djs.count=-1;

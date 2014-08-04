@@ -1,0 +1,17 @@
+global lh;
+v.data=1;
+v.list=sl_new;
+e.data.fin=2;
+e.data.beg=1;
+e.prior=1;
+v.list=sl_insrt(v.list,e);
+e.data.fin=3;
+e.data.beg=1;
+e.prior=1;
+v.list=sl_insrt(v.list,e);
+lh=lheap_listtoheap(v.list);
+e.fin=3;
+e.beg=1;
+e.price=1;
+lh=lheap_findforRR(lh,e);
+lh=lheap_diffprior1(lh,100);
